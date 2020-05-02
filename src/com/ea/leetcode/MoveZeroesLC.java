@@ -38,7 +38,8 @@ public class MoveZeroesLC {
 
   public static void main(String[] args){
 
-      int[] input1 = new int[]{0,1,0,3,12};
+      //int[] input1 = new int[]{0,1,0,3,12};
+    int[] input1 = {0,1,0,3,12};
     System.out.println(Arrays.toString(input1));
     System.out.println(moveZeroes(input1));
 
