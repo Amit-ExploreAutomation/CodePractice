@@ -41,17 +41,36 @@ public class MaximumSubArraysLC {
     int curSum = 0;
 
     for (int i = 0; i < nums.length; i++){
-      curSum = curSum+nums[i];
+      curSum = Math.max(curSum+nums[i],nums[i]);
       maxSum = Math.max(curSum,maxSum);
-      curSum = Math.max(curSum,0);
     }
     return maxSum;
+  }
+
+  public static int maxSubArray(int[] nums) {
+
+    int currentMax = nums[0];
+    int overallMax = nums[0];
+
+    for (int i = 1; i < nums.length; i++) {
+      if (currentMax < 0) {
+        currentMax = nums[i];
+      } else {
+        currentMax = currentMax + nums[i];
+      }
+      if (currentMax > overallMax) {
+        overallMax = currentMax;
+      }
+    }
+    return overallMax;
   }
 
   public static void main(String[] args){
     int[] input = new int[]{-2,1,-3,4,-1,2,1,-5,4};
     System.out.println(maxSubArrayOne(input));
     System.out.println(maxSubArrayTwo(input));
+    System.out.println(maxSubArray(input));
+
   }
 
 }

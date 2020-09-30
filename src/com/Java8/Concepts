@@ -1,0 +1,13 @@
+
+
+                (Predicate)    (Comparator)      (Function)
+Stream    -->     Filter    -->     Sort    -->     Map     -->     Collect
+
+
+  Interface                    Signature                            Examples
+UnaryOperator<T>            T apply(T t)                        String::toLowerCase, Math::tan
+BinaryOperator<T>           T apply(T t1, T t2)                 BigInteger::add, Math::pow
+Function<T, R>              R apply(T t)                        Arrays::asList, Integer::toBinaryString
+Predicate<T, U>             boolean test(T t, U u)              String::isEmpty, Character::isDigit
+Supplier<T>                 T get()                             LocaleDate::now, Instant::now
+Consumer<T>                 void accept(T t)                    System.out::println, Error::printStackTrace

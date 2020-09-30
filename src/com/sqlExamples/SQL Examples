@@ -1,0 +1,51 @@
+1 ---- Important SQL queries
+       1. Return employee record with Highest salary from employee table
+          Select *
+          From employee
+          where Salary = (select max(salary) from employee)
+
+       2. Select Highest salary from employee table
+          Select max(salary)
+          From employee
+
+       3. Select 2nd Highest salary from employee table
+          Select max(Salary)
+          From employee
+          Where salary not in (select max(salary) from employee)
+
+       4. Return employee name , highest salary and department
+          Select e.firstName, e.lastName, e.Salary, d.department
+          From Employee e
+          Inner Join Department d ON
+          e.department = d.department
+
+
+
+
+2 ---- Inner Join : This selects all rows from both the tables for given condition.
+       Syntax : Select t1.col1,t1.col2,t2.col1,t2.col2
+                From t1
+                JOIN t2 On
+                t1.col1 = t2.col2
+
+       Example : SELECT city, country
+                 FROM city
+                 INNER JOIN country ON
+                 city.country_id = country.country_id;
+
+
+3 ---- WHERE vs HAVING
+
+       Select *
+       From t1
+       where <filter condition>
+       group by <colum list>
+       having <filter on aggregate column>
+
+       SELECT NAME, SUM(SALARY) FROM Employee
+       GROUP BY NAME
+       HAVING SUM(SALARY)>3000;
+
+       a. HAVING clause works a a filter on top of grouped rows returned by the GROUPBY clause
+
+       b. WHERE condition works on individual rows, where as HAVING applys the filter condition at grouped rows.

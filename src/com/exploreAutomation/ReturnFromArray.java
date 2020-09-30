@@ -15,6 +15,7 @@ public class ReturnFromArray {
   {
     // returning  array
     return new int[]{1,2,3};
+    // int[] marks = { 125, 132, 95, 116, 110 };
   }
 
 }
