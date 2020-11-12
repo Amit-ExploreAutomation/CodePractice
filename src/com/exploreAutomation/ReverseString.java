@@ -6,8 +6,9 @@ public class ReverseString {
 
   public static void main(String[] args){
     String s = "abcd";
-    System.out.println(revString(s));
-    System.out.println(revStringOne(s));
+    //System.out.println(revString(s));
+    //System.out.println(revStringOne(s));
+    System.out.println(revStringTwo(s));
   }
 
   public static String revString(String s){
@@ -40,6 +41,17 @@ for (int i=s.length()-1;i>=0;i--){
 
 
 return revStr;
+  }
+
+
+  public static String revStringTwo(String s){
+
+    String revStr = "";
+    for (int i=0;i<=s.length()-1;i++){
+      revStr = s.charAt(i) + revStr;
+    }
+    System.out.println(revStr.length());
+    return revStr;
   }
 
 }
